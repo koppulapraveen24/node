@@ -1,0 +1,20 @@
+{
+    "dependencies": {
+      "express": "*",
+      "sonarqube-scanner" : "*"
+    },
+    "scripts": {
+      "start": "node app.js",
+      "test": "mocha --recursive --exit",
+      "owasp": "owasp-dependency-check --project \"nodebuild\" -f HTML JSON"
+    },
+    "name": "WEZVATECH-MASTERCLASS-DEMO-PROJECT",
+    "version": "1.0.0",
+    "main": "app.js",
+    "devDependencies": {
+      "mocha": "9.2.2"
+    },
+    "author": "ADAM WEZVATECH",
+    "license": "MIT",
+    "description": "Sample NodeJS Project with Expres FrameWork - ADAM - 9739110917"
+  }
