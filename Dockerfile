@@ -1,9 +1,8 @@
 FROM node:16 as builder 
-WORKDIR /usr/src
+WORKDIR /usr/files
 COPY package.json ./
 RUN npm install
-COPY ./src ./src
-COPY ./public ./public
+COPY ./files ./files
 RUN rm -rf node_modules
 RUN npm ci --only=production
 
@@ -11,5 +10,5 @@ RUN npm ci --only=production
 FROM alpine:latest as production
 RUN apk --no-cache add nodejs ca-certificates
 WORKDIR /root/
-COPY --from=builder /usr/src ./
-CMD ["node","src/index.js"]
+COPY --from=builder /usr/files ./
+CMD ["node","files/index.js"]
